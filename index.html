@@ -184,6 +184,9 @@ section{padding:88px 0}
 .xp h3{font-size:1.1rem;margin-bottom:4px}
 .xp .org{font-size:.9rem;font-weight:600;color:var(--berry);margin-bottom:8px;display:block}
 .xp p{font-size:.92rem;color:var(--ink-soft)}
+.xp ul{list-style:none;margin-top:4px}
+.xp li{font-size:.92rem;color:var(--ink-soft);padding-left:18px;position:relative;margin-bottom:8px}
+.xp li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--berry)}
 
 /* ---------- Product callout ---------- */
 .product-band{
@@ -309,23 +312,8 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     </div>
 
     <div class="feat-grid">
-      <!-- FinLoop flagship -->
+      <!-- MarketPulse flagship -->
       <article class="card card-wide reveal">
-        <div class="card-cover" style="background-image:url(images/cover-finloop.jpg)" role="img" aria-label="Financial newspaper with a stock chart"></div>
-        <div class="card-body">
-          <h3>FinLoop: Self Improving Financial Document Analysis Agent</h3>
-          <p>A three agent evaluation loop built on the Claude API that improved answer quality from 44.7 to 96.3 out of 100 in a single optimization cycle. The evaluation rubric was designed before the loop was built, and every prompt version, score, and cost is logged, giving full observability into system reliability and quality over time.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag alt">LLM Agents</span><span class="tag alt">Evaluation Frameworks</span><span class="tag alt">Observability</span>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- MarketPulse -->
-      <article class="card reveal">
         <div class="card-cover" style="background-image:url(images/cover-market.jpg)" role="img" aria-label="Candlestick chart on a trading screen"></div>
         <div class="card-body">
           <h3>MarketPulse: Real Time Market Data Platform</h3>
@@ -336,6 +324,22 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
           <div class="card-links">
             <a href="https://github.com/panditk455/MarketPulse" target="_blank" rel="noopener">GitHub</a>
             <a href="https://panditk455.github.io/MarketPulse/" target="_blank" rel="noopener">Live docs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FinLoop -->
+      <article class="card reveal">
+        <div class="card-cover" style="background-image:url(images/cover-finloop.jpg)" role="img" aria-label="Financial newspaper with a stock chart"></div>
+        <div class="card-body">
+          <h3>FinLoop: Self Improving Financial Analysis Agent</h3>
+          <p>A financial document analysis agent that improves itself: three collaborating agents built on the Claude API analyze, evaluate against a rubric designed before the loop was built, and optimize their own prompts. Every prompt version, score, and cost is logged for full observability, at about $0.23 per run.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag alt">LLM Agents</span><span class="tag alt">Evaluation Frameworks</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://panditk455.github.io/finloop/" target="_blank" rel="noopener">Project site</a>
           </div>
         </div>
       </article>
@@ -557,7 +561,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div>
           <h3>Retail Data Intern</h3>
           <span class="org">AgenScience AI, Remote</span>
-          <p>Designing agentic pricing workflows using the Claude API with structured function calling, and building Python backend services and REST API integrations on Azure that connect Shopify to a centralized platform with schema validation at each pipeline stage.</p>
+          <ul>
+            <li>Design agentic pricing workflows on the Claude API with structured function calling, translating what business stakeholders actually need into scalable AI powered solutions that run in production.</li>
+            <li>Build the backbone that keeps it all reliable: Python backend services and REST API integrations on Azure that connect Shopify to a centralized platform, with schema validation at every stage of the pipeline.</li>
+          </ul>
         </div>
       </div>
       <div class="xp reveal">
@@ -565,7 +572,21 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div>
           <h3>Software Engineer Intern</h3>
           <span class="org">United Nations DESA, Remote</span>
-          <p>Built Python ETL pipelines with GitHub Actions CI/CD, replacing a 3 day manual process with a fully automated pipeline ingesting 180+ country level datasets into PostgreSQL, while keeping non technical policy stakeholders aligned on data quality risks.</p>
+          <ul>
+            <li>Turned a 3 day manual process into a fully automated Python ETL pipeline running on GitHub Actions CI/CD, ingesting 180+ country level datasets into PostgreSQL.</li>
+            <li>Kept decision makers on a globally distributed, non technical policy team aligned on data quality risks by communicating tradeoffs clearly and early.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>Sep to Nov 2025</time>
+        <div>
+          <h3>Voice AI Acquisitions Agent</h3>
+          <span class="org">Client Project</span>
+          <ul>
+            <li>Shipped a production agentic phone system under a live client deadline, using LLM function calling to classify caller intent and trigger structured downstream actions in real time.</li>
+            <li>Designed scalable, well documented internal APIs connecting Twilio Voice to a PostgreSQL backend, plus a React dashboard for live monitoring of agent performance.</li>
+          </ul>
         </div>
       </div>
       <div class="xp reveal">
@@ -573,7 +594,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div>
           <h3>Student Software Developer</h3>
           <span class="org">Academic Technology, Carleton College</span>
-          <p>Deployed a Llama 3 RAG pipeline using FAISS vector indexing and a Flask REST API serving 2,000+ users, and built TensorFlow ML pipelines for high throughput behavioral video analysis on GPU hardware.</p>
+          <ul>
+            <li>Deployed a Llama 3 RAG pipeline with FAISS vector indexing behind a Flask REST API, serving 2,000+ users and iterating on the retrieval architecture through continuous evaluation.</li>
+            <li>Built TensorFlow ML pipelines for Drosophila behavioral video analysis, applying feature extraction and classification to high throughput sensor data on GPU hardware.</li>
+          </ul>
         </div>
       </div>
       <div class="xp reveal">
@@ -581,7 +605,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div>
           <h3>B.A. Computer Science &amp; Statistics</h3>
           <span class="org">Carleton College</span>
-          <p>GPA 3.70. Starr International Scholar. Graduated with Distinction in Integrative Exercise and Distinction in Major in Computer Science. Senior comps in satellite image compression (CS) and bootstrap confidence interval methods (Statistics).</p>
+          <ul>
+            <li>GPA 3.70. Starr International Scholar. Graduated with Distinction in Integrative Exercise and Distinction in Major in Computer Science.</li>
+            <li>Coursework: Machine Learning, Data Structures, Algorithms, Statistical Inference, Applied Regression Analysis, Computer Systems, Advanced Statistical Modeling, Probability.</li>
+          </ul>
         </div>
       </div>
     </div>
