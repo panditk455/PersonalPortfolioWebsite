@@ -1,716 +1,656 @@
-<!DOCTYPE HTML>
-<html style="width:100%">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Kritika Pandit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kritika Pandit — Software Engineer &amp; Data Scientist</title>
+<meta name="description" content="Kritika Pandit — Computer Science & Statistics graduate from Carleton College building human-centered software, machine learning, and data systems.">
+<meta name="author" content="Kritika Pandit">
+<meta property="og:title" content="Kritika Pandit — Software Engineer & Data Scientist">
+<meta property="og:description" content="Real-time data platforms, applied machine learning, secure systems, and human-centered product work.">
+<meta property="og:image" content="images/about.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍵</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4;
+  --surface:#ffffff;
+  --ink:#1f2a22;
+  --ink-soft:#4c5a50;
+  --ink-faint:#7b8a7f;
+  --matcha:#3a5a40;
+  --matcha-deep:#2c4632;
+  --matcha-tint:#e8efe6;
+  --berry:#d95f76;
+  --berry-tint:#fbeef1;
+  --line:#e6e2d8;
+  --shadow:0 1px 2px rgba(31,42,34,.06),0 8px 24px rgba(31,42,34,.07);
+  --shadow-lg:0 2px 4px rgba(31,42,34,.08),0 16px 40px rgba(31,42,34,.12);
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;color:var(--ink)}
+a{color:var(--matcha);text-decoration:none}
+a:hover{color:var(--matcha-deep)}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,248,244,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--ink)}
+.nav-logo span{color:var(--berry)}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--matcha-deep)}
+.nav-cta{
+  background:var(--matcha);color:#fff !important;
+  padding:8px 18px;border-radius:999px;font-weight:600;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--matcha-deep)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--ink);cursor:pointer}
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="favicon.ico">
+/* ---------- Hero ---------- */
+.hero{padding:96px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--matcha);background:var(--matcha-tint);
+  padding:6px 14px;border-radius:999px;margin-bottom:20px;
+}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--matcha)}
+.hero-sub{font-size:1.13rem;color:var(--ink-soft);max-width:560px;margin-bottom:30px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:600;font-size:.95rem;
+  transition:transform .15s,box-shadow .15s,background .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--matcha);color:#fff}
+.btn-primary:hover{background:var(--matcha-deep);color:#fff;box-shadow:var(--shadow)}
+.btn-berry{background:var(--berry);color:#fff}
+.btn-berry:hover{background:#c24d63;color:#fff;box-shadow:var(--shadow)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--matcha);color:var(--matcha-deep)}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:1.6rem;color:var(--matcha-deep)}
+.stat span{font-size:.85rem;color:var(--ink-faint)}
+.hero-photo{position:relative}
+.hero-photo img{
+  width:100%;max-width:380px;margin:0 auto;border-radius:24px;
+  box-shadow:var(--shadow-lg);
+  aspect-ratio:4/4.6;object-fit:cover;
+}
+.hero-photo::before{
+  content:"";position:absolute;inset:-14px 30px 14px -14px;
+  border-radius:28px;background:linear-gradient(135deg,var(--matcha-tint),var(--berry-tint));
+  z-index:-1;
+}
 
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-    
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="css/flexslider.css">
-    <!-- Flaticons  -->
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+/* ---------- Section headers ---------- */
+.sec-head{margin-bottom:44px;max-width:640px}
+.sec-head .eyebrow{margin-bottom:14px}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:12px}
+.sec-head p{color:var(--ink-soft)}
 
-    <!-- Custom Responsive CSS -->
-    <style>
-        /* Base responsive fixes */
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: transparent;
-            width: 100%;
-            overflow-x: hidden;
-        }
-        
-        .container-wrap {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-        
-        /* Sidebar responsive fixes */
-        #colorlib-aside {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 300px;
-            z-index: 1000;
-            transition: transform 0.3s ease;
-        }
-        
-        #colorlib-main {
-            margin-left: 300px;
-            width: calc(100% - 300px);
-            min-height: 100vh;
-            padding: 0;
-        }
-        
-        /* Project card improvements */
-        .project {
-            position: relative;
-            height: 350px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            transition: transform 0.4s ease;
-        }
+/* ---------- Featured projects ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card-cover{
+  height:190px;display:flex;align-items:center;justify-content:center;
+  font-size:3rem;position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.card-cover .cover-label{
+  position:absolute;bottom:12px;left:16px;
+  font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;
+  color:rgba(255,255,255,.92);letter-spacing:.02em;
+}
+.cov-market{background:linear-gradient(135deg,#1d3b2a,#3a5a40 55%,#6d9773)}
+.cov-ml{background:linear-gradient(135deg,#4a2c3a,#8a4a5e 60%,#d95f76)}
+.cov-stats{background:linear-gradient(135deg,#2c3e50,#4b6584 60%,#8395a7)}
+.cov-voice{background:linear-gradient(135deg,#5d4157,#a8577b 60%,#e0899f)}
+.card-body{padding:24px 24px 20px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:1.25rem;margin-bottom:10px}
+.card-body p{font-size:.94rem;color:var(--ink-soft);flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tag{
+  font-size:.74rem;font-weight:600;padding:4px 11px;border-radius:999px;
+  background:var(--matcha-tint);color:var(--matcha-deep);
+}
+.tag.alt{background:var(--berry-tint);color:var(--berry)}
+.card-links{display:flex;gap:18px;border-top:1px solid var(--line);padding-top:14px}
+.card-links a{font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
 
-	
-		.project:hover {
-			background-color: #ffb3ba !important; /* Solid pink */
-			background-image: none !important;     /* Remove background image */
-			filter: none !important;
-		}
-		
-		/* This ensures all text inside becomes clearly visible in dark green */
-		.project:hover .desc,
-		.project:hover .desc h3 a,
-		.project:hover .desc span a,
-		.project:hover .desc p {
-			color: #004d00 !important; /* Deep green */
-		}
-		
-		.project:hover .desc {
-			background-color: rgba(255, 255, 255, 0.2); /* light transparent overlay */
-			padding: 20px;
-			border-radius: 10px;
-		}
-		
-		/* Smooth transitions for color and background */
-		.project .desc,
-		.project .desc h3 a,
-		.project .desc span a,
-		.project .desc p {
-			transition: all 0.6s ease-in-out;
-		}
-		
-		
-        
-      
-    
-        /* Timeline responsive fixes */
-        .timeline-centered {
-            position: relative;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .timeline-entry {
-            margin-bottom: 40px;
-        }
-        
-        .timeline-label {
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-label h2 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-        
-        .timeline-label ul {
-            padding-left: 20px;
-        }
-        
-        .timeline-label li {
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        
-        /* Mobile responsive styles */
-        @media (max-width: 768px) {
-            #colorlib-aside {
-                transform: translateX(-100%);
-                width: 280px;
-            }
-            
-            #colorlib-aside.active {
-                transform: translateX(0);
-            }
-            
-            #colorlib-main {
-                margin-left: 0;
-                width: 100%;
-                padding: 20px 10px;
-            }
-            
-            .js-colorlib-nav-toggle {
-                display: block !important;
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                z-index: 1001;
-                background: #004d00;
-                color: white;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-                cursor: pointer;
-            }
-            
-            .project {
-                height: 280px;
-                margin-bottom: 20px;
-            }
-            
-            .project .desc {
-                padding: 20px 15px 15px;
-                transform: translateY(40%);
-            }
-            
-            .project .desc h3 {
-                font-size: 1.1em;
-            }
-            
-            .project .desc p {
-                font-size: 0.8em;
-            }
-            
-            .col-md-6 {
-                width: 100%;
-                padding: 0 10px;
-            }
-            
-            .colorlib-narrow-content {
-                padding: 0 15px;
-            }
-            
-            .timeline-label h2 {
-                font-size: 1.1em;
-            }
-            
-            .timeline-label li {
-                font-size: 0.9em;
-            }
-            
-            .about-desc p {
-                font-size: 0.95em;
-                line-height: 1.5;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .project {
-                height: 250px;
-            }
-            
-            .project .desc {
-                padding: 15px 12px 12px;
-            }
-            
-            .project .desc h3 {
-                font-size: 1em;
-            }
-            
-            .project .desc p {
-                font-size: 0.75em;
-            }
-            
-            .colorlib-heading {
-                font-size: 1.8em;
-            }
-            
-            .heading-meta {
-                font-size: 0.9em;
-            }
-        }
-        
-        /* Tablet styles */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            #colorlib-aside {
-                width: 250px;
-            }
-            
-            #colorlib-main {
-                margin-left: 250px;
-                width: calc(100% - 250px);
-            }
-            
-            .project {
-                height: 320px;
-            }
-        }
-        
-        /* Large screen adjustments */
-        @media (min-width: 1200px) {
-            .container-wrap {
-                max-width: 1400px;
-                margin: 0 auto;
-            }
-        }
-        
-        /* Navigation toggle button */
-        .js-colorlib-nav-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-            background: #004d00;
-            color: white;
-            padding: 12px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        
-        .js-colorlib-nav-toggle:before {
-            content: "☰";
-        }
-        
-        /* Overlay for mobile menu */
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 999;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-overlay.active {
-                display: block;
-            }
-        }
-        
-        /* Image responsiveness */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Text overflow fixes */
-        .project .desc h3,
-        .project .desc p {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-		
-		 /* Designer Note Styles */
-		 .designer-note {
-            padding: 30px;
-            font-family: 'Quicksand', sans-serif;
-            font-size: 14px;
-            color: #333;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+/* ---------- More projects ---------- */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mini{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:22px;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;
+}
+.mini:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.mini .mini-ico{font-size:1.5rem;margin-bottom:10px}
+.mini h3{font-size:1.02rem;margin-bottom:6px}
+.mini p{font-size:.86rem;color:var(--ink-soft);flex:1}
+.mini .mini-links{margin-top:12px;display:flex;gap:14px}
+.mini .mini-links a{font-size:.82rem;font-weight:600}
+.mini .lang{font-size:.72rem;font-weight:600;color:var(--ink-faint);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
 
-        .designer-note p {
-            margin: 5px 0;
-            font-weight: 500;
-        }
+/* ---------- Skills ---------- */
+.skills{background:var(--matcha-deep);color:#eef3ec}
+.skills .sec-head h2,.skills .sec-head p{color:#fff}
+.skills .sec-head p{opacity:.75}
+.skills .eyebrow{background:rgba(255,255,255,.12);color:#cfe0cb}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.skill-col{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:26px}
+.skill-col h3{color:#fff;font-size:1.05rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{
+  font-size:.82rem;font-weight:500;padding:6px 14px;border-radius:999px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#e7eee4;
+}
 
-        .designer-note p:first-child {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-		
-	
-		
-    </style>
+/* ---------- Experience ---------- */
+.xp-list{display:flex;flex-direction:column;gap:0;max-width:760px}
+.xp{
+  display:grid;grid-template-columns:170px 1fr;gap:24px;
+  padding:26px 0;border-bottom:1px solid var(--line);
+}
+.xp:first-child{border-top:1px solid var(--line)}
+.xp time{font-size:.85rem;font-weight:600;color:var(--ink-faint);padding-top:3px}
+.xp h3{font-size:1.1rem;margin-bottom:4px}
+.xp .org{font-size:.9rem;font-weight:600;color:var(--berry);margin-bottom:8px;display:block}
+.xp p{font-size:.92rem;color:var(--ink-soft)}
 
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-  
+/* ---------- Product callout ---------- */
+.product-band{
+  background:linear-gradient(120deg,var(--berry-tint),var(--matcha-tint));
+  border-radius:24px;padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;
+}
+.product-band h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px}
+.product-band p{color:var(--ink-soft);margin-bottom:14px;font-size:.97rem}
+.product-band img{border-radius:14px;box-shadow:var(--shadow-lg)}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:.98rem}
+.travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.travel{
+  position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;
+  background-size:cover;background-position:center;
+}
+.travel span{
+  position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;
+  font-size:.82rem;font-weight:600;color:#fff;
+  background:linear-gradient(transparent,rgba(20,30,22,.75));
+}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:#cfd8d0;padding:72px 0 40px;text-align:center}
+footer h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:14px}
+footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem}
+.foot-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.foot-note{font-size:.85rem;opacity:.55}
+.foot-note b{color:#f0b7c1}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{order:-1}
+  .hero-photo img{max-width:280px}
+  .feat-grid{grid-template-columns:1fr}
+  .mini-grid{grid-template-columns:repeat(2,1fr)}
+  .skill-grid{grid-template-columns:1fr}
+  .product-band{grid-template-columns:1fr;padding:36px}
+  .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  section{padding:64px 0}
+  .nav-links{
+    position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    display:none;padding:12px 0;
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px}
+  .nav-cta{margin:10px 24px;display:block}
+  .nav-toggle{display:block}
+  .mini-grid{grid-template-columns:1fr}
+  .xp{grid-template-columns:1fr;gap:6px;padding:22px 0}
+}
+</style>
 </head>
 <body>
-    <div class="mobile-overlay"></div>
-    <div id="colorlib-page">
-        <div class="container-wrap">
-            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"></a>
-            <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-                <div class="text-center">
-                    <div class="author-img" style="background-image: url(images/about.png);" alt="Headshot of Kritika Pandit"></div>
-                    <h1 id="colorlib-logo"><a href="index.html">Kritika Pandit</a></h1>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
-                    <div id="navbar" class="collapse">
-                        <ul>
-                            <li><a href="#" data-nav-section="software">Software</a></li>
-                            <li><a href="#" data-nav-section="data">Data + ML</a></li>
-                            <li><a href="#" data-nav-section="product">Product</a></li>
-                            <li><a href="#" data-nav-section="about">About Me</a></li>
-                        </ul>
-                    </div>
-                </nav>
 
-                <div class="colorlib-footer">
-                    <ul>
-                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                    </ul>
-                </div>
-            </aside>
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="#top">Kritika Pandit<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#product">Product</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="nav-cta" href="images/Kritika'sResume.pdf" target="_blank">Resume ↓</a></li>
+    </ul>
+  </div>
+</nav>
 
-            <div id="colorlib-main">
-                <!-- SOFTWARE WORK SECTION -->
-                <section class="colorlib-work" data-section="software">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                                <span class="heading-meta">My Work around Software</span>
-                                <h2 class="colorlib-heading animate-box">Software Development</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project" style="background-image: url(images/img-1.png);" title="AI-powered customer support chatbot with real-time assistance capabilities">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>AI-Customer-Support</strong></a></h3>
-                                            <span><a href="https://github.com/nayanmapara/AI-Customer-Support" target="_blank"><strong>Github: AI-Customer-Support</strong></a></span><br>
-                                            <p>Built a responsive React AI chatbot using Google Gemini API with dynamic theming, local storage for preferences, Material-UI design, and server-side AI response generation.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                                <div class="project" style="background-image: url(images/img-2.png);" alt="Carls Chat project screenshot" title="Flask-based real-time chat platform with avatar customization and location-based activities">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Carls Chat</strong></a></h3>
-                                            <span><a href="https://github.com/panditk455/FAST-Falcons" target="_blank"><strong>Github: Carls Chat</strong></a></span>
-                                            <p>Flask-based platform supporting real-time chat, avatar customization, and location-based activities</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-                                <div class="project" style="background-image: url(images/img-4.png);" alt="Viking Rowing Minigame screenshot" title="Unity-based VR rowing mini-game with 3D Viking ship and mixed reality elements">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Viking Rowing Minigame</strong></a></h3>
-                                            <span><a href="https://github.com/Virtual-Viking-Longship/Rowing-Minigame" target="_blank"><strong>Github: Viking Rowing Minigame</strong></a></span>
-                                            <p>Built cross-platform VR simulations and a physics-based rowing mini-game in Unity for Meta Quest through optimized C# mechanics and historically accurate 3D assets.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/img-6.png);" alt="AI FlashCards project screenshot" title="AI-powered flashcard generator for automated study material creation">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>AI FlashCards</strong></a></h3>
-                                            <span><a href="https://github.com/nayanmapara/AI-Flashcards" target="_blank"><strong>Github: AI FlashCards</strong></a></span><br>
-                                            <p>Built a dynamic Flashcard Generator app using the Google Gemini API, integrating Clerk for authentication and Stripe for subscription-based premium access.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project" style="background-image: url(images/crypto.png);" title="Cryptographic file transfer system with AES-GCM and RSA hybrid encryption">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Secure File Transfer Implementation</strong></a></h3>
-                                            <span><a href="https://github.com/panditk455/Secure-File-Transfer" target="_blank"><strong>Github: Secure File Transfer</strong></a></span>
-                                            <p>Built a secure client-server file transfer system using AES-GCM and RSA-AES hybrid encryption with safeguards against tampering, replay, and injection attacks.</p>
-                                        </div>
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🍵 CS + Statistics · Carleton College</span>
+      <h1>I build <em>data-driven</em> software that puts people first.</h1>
+      <p class="hero-sub">
+        I'm Kritika — a software engineer and data scientist currently building at
+        <strong>AgenScience AI</strong>. From real-time market data platforms and applied
+        machine learning to secure systems and voice AI agents, I love turning hard
+        technical problems into products people actually enjoy using.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#projects">View my work</a>
+        <a class="btn btn-berry" href="images/Kritika'sResume.pdf" target="_blank">Download resume</a>
+        <a class="btn btn-ghost" href="https://github.com/panditk455" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/kritikapandit/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>20+</b><span>public repositories</span></div>
+        <div class="stat"><b>7</b><span>languages shipped in</span></div>
+        <div class="stat"><b>ML → Product</b><span>full-stack range</span></div>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <img src="images/about.png" alt="Kritika Pandit">
+    </div>
+  </div>
+</header>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                                <div class="project" style="background-image: url(images/algo.png);" title="Research analysis of Karger's randomized minimum cut algorithm with Monte Carlo amplification">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Karger's Minimum Cut Algorithm</strong></a></h3>
-                                            <span><a href="#" onclick="window.open('images/algo.pdf', '_blank')"> <strong>View Research Paper (PDF)</strong></a></span>
-                                            <p> Analyzed and proved Karger's randomized min-cut algorithm, designing an amplified version with improved success probability via Monte Carlo techniques.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<!-- ================= FEATURED PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Featured work</span>
+      <h2>Projects I'm proud of</h2>
+      <p>A selection of recent engineering, machine learning, and systems work. Everything is open source — dig into the code on GitHub.</p>
+    </div>
 
-                <!-- DATA WORK SECTION -->
-                <section class="colorlib-work" data-section="data">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                                <span class="heading-meta">My work around Data + ML</span>
-                                <h2 class="colorlib-heading animate-box">Data + ML</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project" style="background-image: url(images/img-3.png);" alt="House Model Prediction screenshot">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>House Model Prediction</strong></a></h3>
-                                            <span><a href="https://github.com/panditk455/Prediction-of-House-Prices-in-California" target="_blank"><strong>Github: House Model Prediction</strong></a></span><br>
-                                            <span><a href="https://palmy.shinyapps.io/finalApp/" target="_blank"><strong>Deployed App: House Model Prediction App</strong></a></span>
-                                            <p>Developed an interactive Shiny app to predict house prices using machine learning (Random Forest), spatial analysis, and dynamic visualizations.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                                <div class="project" style="background-image: url(images/img-5.png);" alt="Election Data Visualizer screenshot">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Election Data Visualizer</strong></a></h3>
-                                            <span><a href="https://github.com/stellathompson/fighting-fish" target="_blank"><strong>Github: Election Data Visualizer</strong></a></span>
-                                            <p>Built a web app with interactive visualizations of 2016 and 2020 election data using PostgreSQL, Python APIs, and JS/HTML/CSS, deployed on Carleton's remote server.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-                                <div class="project" style="background-image: url(images/racialbias.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Racial Bias in Jury Selection</strong></a></h3>
-                                            <span><a href="#" onclick="window.open('images/racialbiasanalysis.pdf', '_blank')"><strong>View Analysis (PDF)</strong></a></span>
-                                            <p>Conducted logistic regression in R on 418 Mississippi trials to analyze racial bias in jury strikes, finding juror-defendant racial match a stronger predictor than defendant race via LRTs and AIC.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/powerlifting.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3><a href="work.html"><strong>Powerlifting Performance Modeling</strong></a></h3>
-                                            <span><a href="#" onclick="window.open('images/powerlifting.pdf', '_blank')"><strong>View Analysis (PDF)</strong></a></span>
-                                            <p>Modeled deadlift and squat performance of 17,800+ lifters in R using log-log regression, revealing age-sex-bodyweight interactions via multivariate analysis, ANOVA F-tests, AIC, and residual diagnostics.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>	
-                        </div>
-                    </div>
-                </section>
+    <div class="feat-grid">
+      <!-- MarketPulse -->
+      <article class="card reveal">
+        <div class="card-cover cov-market">📈<span class="cover-label">MarketPulse</span></div>
+        <div class="card-body">
+          <h3>MarketPulse — Real-Time Market Analytics</h3>
+          <p>Real-time market data platform that ingests live trades from multiple crypto exchanges, processes them with stream-processing guarantees of provable correctness, and reconciles results against an orchestrated batch warehouse.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Stream Processing</span><span class="tag alt">Data Engineering</span><span class="tag alt">Real-Time Systems</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/MarketPulse" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://panditk455.github.io/MarketPulse/" target="_blank" rel="noopener">Live docs →</a>
+          </div>
+        </div>
+      </article>
 
-                <!-- PRODUCT WORK SECTION -->
-                <section class="colorlib-about" data-section="product">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="about-desc">
-                                    <span class="heading-meta">My Work in Product</span>
-                                    <h2 class="colorlib-heading">Product Management</h2>
-                                    <p><strong>Want to see how I think, build, and iterate?</strong></p>
-                                    <p>Explore my product portfolio to dive into real-world projects, discover user-driven design decisions, and follow the process behind building and launching my app.</p>
-                                    <p>
-                                        <a href="https://kritika-s-productfolio-tegf.vercel.app/" target="_blank">
-                                            🍓🍵Visit my Product Portfolio🍓🍵
-                                        </a>
-                                    </p>
-                                    <p>
-                                        In my 🍓🍵 <strong>Strawberry matcha themed Product Portfolio</strong> 🍓🍵, You'll see a mix of sweet design, bold ideas, and tech with purpose. I've brewed up projects like <strong>Carls Swap</strong>, a student item exchange app, and <strong>CampusConnect</strong>, making food access easier for international students. You'll also find a <strong>real-time chat app</strong> built with WebSockets, a <strong>travel journal</strong> for capturing trip memories, and a deep dive into <strong>urban life in Singapore</strong>. Lately, I'm mixing in some fun with <strong>AI puzzle games</strong> that teach digital literacy, because learning should be just as delightful as a strawberry matcha.
-                                    </p>
-                                    <img src="images/productportfolio.png" alt="Kritika's Product Portfolio Preview" style="width: 100%; margin-top: 20px; border-radius: 10px;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+      <!-- Secure File Transfer -->
+      <article class="card reveal">
+        <div class="card-cover" style="background-image:url(images/crypto.png)"></div>
+        <div class="card-body">
+          <h3>Secure File Transfer System</h3>
+          <p>Client-server file transfer hardened against tampering, injection, deletion, and replay attacks — AES-GCM for confidentiality + integrity, hybrid RSA-AES key exchange over insecure networks, with sequence numbering, timestamping, and SHA-256 verification.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Cryptography</span><span class="tag alt">AES-GCM</span><span class="tag alt">Network Security</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/Secure-File-Transfer" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
 
+      <!-- Forensic ML -->
+      <article class="card reveal">
+        <div class="card-cover cov-ml">🎯<span class="cover-label">Forensic ML</span></div>
+        <div class="card-body">
+          <h3>Predicting Forensic Firearm Examiner Decisions</h3>
+          <p>Machine learning on the Bullet Black Box Study: Random Forest, XGBoost, and logistic regression with K-best feature selection to predict examiner decisions — balancing predictive performance with the interpretability forensic science demands.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Random Forest</span><span class="tag alt">Interpretability</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/Machine-Learning-Project" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
 
-                <!-- ABOUT SECTION -->
-                <section class="colorlib-about" data-section="about">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                                    <div class="col-md-12">
-                                        <div class="about-desc">
-                                            <span class="heading-meta">About Me</span>
-                                            <h2 class="colorlib-heading">Who Am I?</h2>
-                                            <!-- Resume Link -->
-                                            <a href="images/Kritika'sResume.pdf" target="_blank" class="resume-link">Download Kritika's Resume</a>
-                                            <p>
-                                                I'm a senior at Carleton College, double majoring in Computer Science and Statistics, and proudly from the mountains of Nepal. I build human-centered tech, from VR learning tools to edtech platforms, with a focus on impact, inclusion, and great UX.
-                                            </p>
+      <!-- Satellite Image Compression -->
+      <article class="card reveal">
+        <div class="card-cover" style="background-image:url(images/img-3.png)"></div>
+        <div class="card-body">
+          <h3>Satellite Image Compression (Senior Thesis)</h3>
+          <p>End-to-end JPEG and JPEG-2000 compression pipelines built from scratch and with libraries — step-by-step DCT/wavelet transforms, encoding/decoding, and a full metrics suite comparing both formats on satellite imagery.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Signal Processing</span><span class="tag alt">JPEG-2000</span><span class="tag alt">NumPy</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/SatelliteImageCompression" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://websitecomps.vercel.app/" target="_blank" rel="noopener">Project site →</a>
+          </div>
+        </div>
+      </article>
 
-                                            <p>
-                                                I'm driven by the belief that technology should be human-centered, ethical, and inclusive. Whether it's optimizing learning tools at an edtech startup, building immersive VR simulations, or enhancing AI platforms for student success, I enjoy crafting solutions that make people's lives a little better, and a lot more intuitive.
-                                                My friends say I'm both fiercely independent and deeply collaborative. At SayKid, for example, I combined product strategy, backend automation, and user research to improve engagement by over 25%, while learning the value of adaptability in fast-moving environments.
-                                            </p>
+      <!-- Voice AI agent -->
+      <article class="card reveal">
+        <div class="card-cover cov-voice">📞<span class="cover-label">Vanessa · Voice AI</span></div>
+        <div class="card-body">
+          <h3>"Vanessa" — Voice AI Acquisitions Agent</h3>
+          <p>Autonomous voice agent that dials property owners through Twilio/Vapi, detects seller intent within ~90 seconds, asks about price and timing, then hot-transfers qualified leads to a human or logs results to a dashboard.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">Twilio / Vapi</span><span class="tag alt">LLM Agents</span><span class="tag alt">Voice AI</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/Voice-AI-acquisitions-agent-Vanessa-" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://voice-ai-acquisitions-agent-vanessa.vercel.app" target="_blank" rel="noopener">Live demo →</a>
+          </div>
+        </div>
+      </article>
 
-                                            <p>
-                                                Outside of work, I love making drinks, coffee, matcha, and especially strawberry matcha, which is my favorite! So much so that I designed my entire Product Portfolio around this theme. I'm also a compulsive traveler and planner. Studying abroad in Budapest gave me the chance to explore 12+ countries in six months, navigating logistics, budgeting, and unexpected detours along the way. That love for exploration inspired me to co-build a travel journal app that helps others track itineraries, expenses, and meaningful moments. Whether through travel or tech, I love learning how people live, what they need, and how we can design better systems to support them.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>						
-                            </div>
-                        </div>
-                    </div>
-                </section>
+      <!-- Stats COMPS -->
+      <article class="card reveal">
+        <div class="card-cover cov-stats">📊<span class="cover-label">Statistics COMPS</span></div>
+        <div class="card-body">
+          <h3>Bootstrap Methods for Forensic Error Rates</h3>
+          <p>Senior statistics comps comparing four bootstrap methods for constructing confidence intervals on error rates and inconclusive rates — a simulation study of coverage and width that informs how forensic evidence uncertainty is reported.</p>
+          <div class="tags">
+            <span class="tag">R</span><span class="tag">Bootstrap</span><span class="tag alt">Simulation Study</span><span class="tag alt">Statistical Inference</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/StatsCOMPSGroup1" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-                <!-- TRAVEL GALLERY SECTION -->
-                <section class="colorlib-work" data-section="travel">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                                <span class="heading-meta">Adventures</span>
-                                <h2 class="colorlib-heading animate-box">Few Favs</h2>
-                            </div>
-                        </div>
+<!-- ================= MORE PROJECTS ================= -->
+<section id="more" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">More on GitHub</span>
+      <h2>More projects &amp; research</h2>
+    </div>
+    <div class="mini-grid">
+      <div class="mini reveal">
+        <div class="mini-ico">🏠</div>
+        <h3>California House Price Prediction</h3>
+        <p>Interactive Shiny app predicting house prices with Random Forest, spatial analysis, and dynamic visualizations.</p>
+        <div class="lang">R · Machine Learning</div>
+        <div class="mini-links">
+          <a href="https://github.com/panditk455/Prediction-of-House-Prices-in-California" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://palmy.shinyapps.io/finalApp/" target="_blank" rel="noopener">Live app →</a>
+        </div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🗳️</div>
+        <h3>Election Data Visualizer</h3>
+        <p>Web app with interactive visualizations of 2016 &amp; 2020 US election data — PostgreSQL, Python APIs, and JS front end.</p>
+        <div class="lang">Python · PostgreSQL · JS</div>
+        <div class="mini-links"><a href="https://github.com/stellathompson/fighting-fish" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">💬</div>
+        <h3>Carls Chat</h3>
+        <p>Flask-based real-time chat platform for Carleton students with avatar customization and location-based activities.</p>
+        <div class="lang">Python · Flask</div>
+        <div class="mini-links">
+          <a href="https://github.com/panditk455/FAST-Falcons" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://fast-falcons.vercel.app" target="_blank" rel="noopener">Live →</a>
+        </div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🛶</div>
+        <h3>Viking Rowing VR Minigame</h3>
+        <p>Physics-based rowing minigame in Unity for Meta Quest — part of Carleton's Virtual Viking Longship research project.</p>
+        <div class="lang">C# · Unity · VR</div>
+        <div class="mini-links"><a href="https://github.com/Virtual-Viking-Longship/Rowing-Minigame" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🤖</div>
+        <h3>AI Customer Support</h3>
+        <p>Responsive React chatbot on the Google Gemini API with dynamic theming, Material-UI, and server-side response generation.</p>
+        <div class="lang">React · Gemini API</div>
+        <div class="mini-links"><a href="https://github.com/nayanmapara/AI-Customer-Support" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🃏</div>
+        <h3>AI Flashcards</h3>
+        <p>Flashcard generator using Gemini, with Clerk authentication and Stripe subscriptions for premium access.</p>
+        <div class="lang">Next.js · Stripe · Clerk</div>
+        <div class="mini-links"><a href="https://github.com/nayanmapara/AI-Flashcards" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">✂️</div>
+        <h3>Karger's Min-Cut, Amplified</h3>
+        <p>Analyzed and proved Karger's randomized min-cut algorithm and designed an amplified variant with improved success probability.</p>
+        <div class="lang">Algorithms · Research</div>
+        <div class="mini-links"><a href="images/algo.pdf" target="_blank">Paper (PDF) →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">⚖️</div>
+        <h3>Racial Bias in Jury Selection</h3>
+        <p>Logistic regression on 418 Mississippi trials — juror-defendant racial match proved a stronger predictor than defendant race.</p>
+        <div class="lang">R · Statistical Modeling</div>
+        <div class="mini-links"><a href="images/racialbiasanalysis.pdf" target="_blank">Analysis (PDF) →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🏋️</div>
+        <h3>Powerlifting Performance Modeling</h3>
+        <p>Log-log regression on 17,800+ lifters revealing age–sex–bodyweight interactions via ANOVA, AIC, and residual diagnostics.</p>
+        <div class="lang">R · Regression</div>
+        <div class="mini-links"><a href="images/powerlifting.pdf" target="_blank">Analysis (PDF) →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">🌍</div>
+        <h3>Child Mortality Across the World</h3>
+        <p>Shiny app visualizing global child mortality using World Bank data with interactive country-level exploration.</p>
+        <div class="lang">R · Shiny · Data Viz</div>
+        <div class="mini-links">
+          <a href="https://github.com/panditk455/Child-Mortality-Across-World" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">📱</div>
+        <h3>Android Apps in Kotlin</h3>
+        <p>Minesweeper, a calculator app, and WanderAround — native Android apps built in Kotlin with Android Studio.</p>
+        <div class="lang">Kotlin · Android</div>
+        <div class="mini-links"><a href="https://github.com/panditk455/Minesweeper-Game" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+      <div class="mini reveal">
+        <div class="mini-ico">💹</div>
+        <h3>finloop</h3>
+        <p>Personal finance tooling in Python — an ongoing build exploring automated money workflows.</p>
+        <div class="lang">Python</div>
+        <div class="mini-links"><a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                        <div class="row">
-                            <!-- Cinque Terre -->
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/Cinqueterre.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3>Cinque Terre, Italy</h3>
-                                            <p>"Felt like stepping into a watercolor painting, every corner a postcard I didn't want to leave."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Toolbox</span>
+      <h2>Skills &amp; technologies</h2>
+      <p>A CS + Statistics double major means I'm equally at home shipping software and defending a model's assumptions.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-col reveal">
+        <h3>💻 Languages</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">R</span><span class="chip">JavaScript</span>
+          <span class="chip">Kotlin</span><span class="chip">C#</span><span class="chip">SQL</span>
+          <span class="chip">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-col reveal">
+        <h3>📊 Data &amp; Machine Learning</h3>
+        <div class="chips">
+          <span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">pandas / NumPy</span>
+          <span class="chip">Statistical Modeling</span><span class="chip">Bootstrap Methods</span>
+          <span class="chip">R Shiny</span><span class="chip">Stream Processing</span><span class="chip">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-col reveal">
+        <h3>🛠 Systems &amp; Product</h3>
+        <div class="chips">
+          <span class="chip">React / Next.js</span><span class="chip">Flask</span><span class="chip">Unity / VR</span>
+          <span class="chip">Android Studio</span><span class="chip">Cryptography</span><span class="chip">LLM Agents</span>
+          <span class="chip">Twilio / Vapi</span><span class="chip">Git &amp; Vercel</span><span class="chip">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                            <!-- Lake Como -->
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/como.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3>Lake Como, Italy</h3>
-                                            <p>"Peace tasted like espresso by the water, with the Alps whispering secrets in the distance."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where I've worked</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="xp-list">
+      <div class="xp reveal">
+        <time>2026 — Present</time>
+        <div>
+          <h3>Software Engineer</h3>
+          <span class="org">AgenScience AI</span>
+          <p>Building AI-powered products — from data pipelines to agentic workflows — at an early-stage startup.</p>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>2022 — 2026</time>
+        <div>
+          <h3>B.A. Computer Science &amp; Statistics</h3>
+          <span class="org">Carleton College</span>
+          <p>Double major. Senior comps in satellite image compression (CS) and bootstrap methods for forensic error rates (Statistics). Research contributor on the Virtual Viking Longship spatial-computing project.</p>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>Internship</time>
+        <div>
+          <h3>Product &amp; Game Development Intern</h3>
+          <span class="org">SayKid</span>
+          <p>Combined product strategy, backend automation, and user research to improve engagement by over 25% on a screen-free edtech toy platform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                            <!-- Budapest -->
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/budapest.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3>Budapest, Hungary</h3>
-                                            <p>"A city that sparkles at night and stirs your soul by day, I left a little piece of my heart by the Danube."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!-- ================= PRODUCT ================= -->
+<section id="product" style="padding-top:0">
+  <div class="wrap">
+    <div class="product-band reveal">
+      <div>
+        <span class="eyebrow">🍓 Product thinking</span>
+        <h2>Want to see how I think, build, and iterate?</h2>
+        <p>Engineering is half the story. My <strong>strawberry-matcha-themed product portfolio</strong> walks through real product work — user research, design decisions, and launches — including <strong>Carls Swap</strong> (student item exchange), <strong>CampusConnect</strong> (food access for international students), a real-time chat app, a travel journal, and AI puzzle games that teach digital literacy.</p>
+        <a class="btn btn-berry" href="https://kritika-s-productfolio-tegf.vercel.app/" target="_blank" rel="noopener">Visit my product portfolio 🍓🍵</a>
+      </div>
+      <img src="images/productportfolio.png" alt="Preview of Kritika's product portfolio website">
+    </div>
+  </div>
+</section>
 
-                            <!-- Spain -->
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" style="background-image: url(images/costabrava.png);">
-                                    <div class="desc">
-                                        <div class="con">
-                                            <h3>Costa Brava, Spain</h3>
-                                            <p>"Golden cliffs, hidden coves, and spontaneous joy, Costa Brava was freedom with a sea breeze."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<!-- ================= ABOUT ================= -->
+<section id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">About me</span>
+      <h2>Who am I?</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm from the mountains of Nepal, and I graduated from Carleton College with a double major in Computer Science and Statistics. I build human-centered tech — from VR learning tools to edtech platforms to real-time data systems — with a focus on impact, inclusion, and great UX.</p>
+        <p>I believe technology should be human-centered, ethical, and inclusive. Whether I'm optimizing learning tools at an edtech startup, building immersive VR simulations, or engineering AI platforms, I enjoy crafting solutions that make people's lives a little better and a lot more intuitive. My friends say I'm both fiercely independent and deeply collaborative.</p>
+        <p>Outside of work I'm a drinks person — coffee, matcha, and above all <strong>strawberry matcha</strong> 🍓🍵 (yes, my product portfolio is themed after it). I'm also a compulsive traveler and planner: studying abroad in Budapest let me explore 12+ countries in six months, which inspired me to co-build a travel journal app. Whether through travel or tech, I love learning how people live, what they need, and how to design better systems to support them.</p>
+      </div>
+      <div class="travel-grid reveal">
+        <div class="travel" style="background-image:url(images/Cinqueterre.png)"><span>Cinque Terre, Italy</span></div>
+        <div class="travel" style="background-image:url(images/como.png)"><span>Lake Como, Italy</span></div>
+        <div class="travel" style="background-image:url(images/budapest.png)"><span>Budapest, Hungary</span></div>
+        <div class="travel" style="background-image:url(images/costabrava.png)"><span>Costa Brava, Spain</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-				<div class="designer-note">
-					<p><strong>Made with ♥️ by Kritika Pandit</strong></p>
-					<p>Drink some Strawberry matcha! 🍓🍵 Stay hydrated!</p>
-				</div>
-            </div><!-- end:colorlib-main -->
-        </div><!-- end:container-wrap -->
-    </div><!-- end:colorlib-page -->
+<!-- ================= FOOTER / CONTACT ================= -->
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's build something together.</h2>
+    <p class="foot-sub">I'm always happy to talk about engineering, data, product — or the perfect strawberry matcha recipe.</p>
+    <div class="foot-links">
+      <a class="btn btn-berry" href="https://www.linkedin.com/in/kritikapandit/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/panditk455" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="images/Kritika'sResume.pdf" target="_blank">Resume</a>
+    </div>
+    <p class="foot-note">Made with <b>♥</b> by Kritika Pandit · Drink some strawberry matcha 🍓🍵 &amp; stay hydrated!</p>
+  </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <!-- Flexslider -->
-    <script src="js/jquery.flexslider-min.js"></script>
-    <!-- Owl carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Counters -->
-    <script src="js/jquery.countTo.js"></script>
-    
-    <!-- MAIN JS -->
-    <script src="js/main.js"></script>
+<script>
+// Mobile nav toggle
+const toggle=document.querySelector('.nav-toggle');
+const links=document.querySelector('.nav-links');
+toggle.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-    <!-- Custom Mobile Navigation Script -->
-    <script>
-        $(document).ready(function() {
-            // Mobile navigation toggle
-            $('.js-colorlib-nav-toggle').on('click', function(e) {
-                e.preventDefault();
-                $('#colorlib-aside').toggleClass('active');
-                $('.mobile-overlay').toggleClass('active');
-            });
-
-            // Close mobile menu when overlay is clicked
-            $('.mobile-overlay').on('click', function() {
-                $('#colorlib-aside').removeClass('active');
-                $('.mobile-overlay').removeClass('active');
-            });
-
-            // Close mobile menu when a nav link is clicked
-            $('#colorlib-main-menu a').on('click', function() {
-                if ($(window).width() <= 768) {
-                    $('#colorlib-aside').removeClass('active');
-                    $('.mobile-overlay').removeClass('active');
-                }
-            });
-
-            // Handle window resize
-            $(window).on('resize', function() {
-                if ($(window).width() > 768) {
-                    $('#colorlib-aside').removeClass('active');
-                    $('.mobile-overlay').removeClass('active');
-                }
-            });
-        });
-    </script>
-	
-	
-	
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
