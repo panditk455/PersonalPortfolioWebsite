@@ -138,6 +138,12 @@ section{padding:88px 0}
 .tag.alt{background:var(--berry-tint);color:var(--berry)}
 .card-links{display:flex;gap:18px;border-top:1px solid var(--line);padding-top:14px}
 .card-links a{font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.card-wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.1fr}
+.card-wide .card-cover{height:100%;min-height:280px}
+@media (max-width:960px){
+  .card-wide{display:flex;flex-direction:column}
+  .card-wide .card-cover{height:200px;min-height:0}
+}
 
 /* ---------- More projects ---------- */
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -258,7 +264,7 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
       <li><a href="#experience">Experience</a></li>
       <li><a href="#product">Product</a></li>
       <li><a href="#about">About</a></li>
-      <li><a class="nav-cta" href="images/Kritika'sResume.pdf" target="_blank">Resume</a></li>
+      <li><a class="nav-cta" href="images/KritikaPanditResume.pdf" target="_blank">Resume</a></li>
     </ul>
   </div>
 </nav>
@@ -277,7 +283,7 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
       </p>
       <div class="btn-row">
         <a class="btn btn-primary" href="#projects">View my work</a>
-        <a class="btn btn-berry" href="images/Kritika'sResume.pdf" target="_blank">Download resume</a>
+        <a class="btn btn-berry" href="images/KritikaPanditResume.pdf" target="_blank">Download resume</a>
         <a class="btn btn-ghost" href="https://github.com/panditk455" target="_blank" rel="noopener">GitHub</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/kritikapandit/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -303,14 +309,29 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     </div>
 
     <div class="feat-grid">
+      <!-- FinLoop flagship -->
+      <article class="card card-wide reveal">
+        <div class="card-cover" style="background-image:url(images/cover-finloop.jpg)" role="img" aria-label="Financial newspaper with a stock chart"></div>
+        <div class="card-body">
+          <h3>FinLoop: Self Improving Financial Document Analysis Agent</h3>
+          <p>A three agent evaluation loop built on the Claude API that improved answer quality from 44.7 to 96.3 out of 100 in a single optimization cycle. The evaluation rubric was designed before the loop was built, and every prompt version, score, and cost is logged, giving full observability into system reliability and quality over time.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag alt">LLM Agents</span><span class="tag alt">Evaluation Frameworks</span><span class="tag alt">Observability</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
       <!-- MarketPulse -->
       <article class="card reveal">
         <div class="card-cover" style="background-image:url(images/cover-market.jpg)" role="img" aria-label="Candlestick chart on a trading screen"></div>
         <div class="card-body">
-          <h3>MarketPulse: Real Time Market Analytics</h3>
-          <p>Real time market data platform that ingests live trades from multiple crypto exchanges, processes them with stream processing guarantees of provable correctness, and reconciles results against an orchestrated batch warehouse.</p>
+          <h3>MarketPulse: Real Time Market Data Platform</h3>
+          <p>Real time streaming pipeline built with Kafka and TimescaleDB that processes live Coinbase and Kraken trade feeds with exactly once in effect aggregation on top of at least once delivery. An automated Airflow reconciliation system caught a real production bug where server restarts silently dropped data, then self healed every affected minute on re run.</p>
           <div class="tags">
-            <span class="tag">Python</span><span class="tag">Stream Processing</span><span class="tag alt">Data Engineering</span><span class="tag alt">Real Time Systems</span>
+            <span class="tag">Python</span><span class="tag">Kafka</span><span class="tag">TimescaleDB</span><span class="tag alt">Airflow</span><span class="tag alt">Stream Processing</span>
           </div>
           <div class="card-links">
             <a href="https://github.com/panditk455/MarketPulse" target="_blank" rel="noopener">GitHub</a>
@@ -338,10 +359,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
       <article class="card reveal">
         <div class="card-cover" style="background-image:url(images/cover-forensic.jpg)" role="img" aria-label="Grayscale close up of ammunition"></div>
         <div class="card-body">
-          <h3>Predicting Forensic Firearm Examiner Decisions</h3>
-          <p>Machine learning on the Bullet Black Box Study: Random Forest, XGBoost, and logistic regression with K best feature selection to predict examiner decisions, balancing predictive performance with the interpretability forensic science demands.</p>
+          <h3>Interpretable ML: Forensic Firearm Examiner Decisions</h3>
+          <p>Trained XGBoost and Random Forest classifiers on 6,000+ structured records from the Bullet Black Box Study, reaching 80.8% accuracy after correcting for class imbalance and structural missingness. SHAP values identify the primary predictors of decision outcomes, translated into a written report for a non specialist audience.</p>
           <div class="tags">
-            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Random Forest</span><span class="tag alt">Interpretability</span>
+            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Scikit Learn</span><span class="tag alt">SHAP</span><span class="tag alt">Interpretability</span>
           </div>
           <div class="card-links">
             <a href="https://github.com/panditk455/Machine-Learning-Project" target="_blank" rel="noopener">GitHub</a>
@@ -370,9 +391,9 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div class="card-cover" style="background-image:url(images/cover-voice.jpg)" role="img" aria-label="Person holding a phone to their ear"></div>
         <div class="card-body">
           <h3>Vanessa: Voice AI Acquisitions Agent</h3>
-          <p>Autonomous voice agent that dials property owners through Twilio and Vapi, detects seller intent within about 90 seconds, asks about price and timing, then transfers qualified leads to a human or logs results to a dashboard.</p>
+          <p>Production agentic phone system built under a live client deadline. LLM function calling classifies caller intent within about 90 seconds and triggers structured downstream actions, with internal APIs connecting Twilio Voice to a PostgreSQL backend and a React dashboard for real time monitoring of agent performance.</p>
           <div class="tags">
-            <span class="tag">JavaScript</span><span class="tag">Twilio / Vapi</span><span class="tag alt">LLM Agents</span><span class="tag alt">Voice AI</span>
+            <span class="tag">JavaScript</span><span class="tag">Twilio Voice</span><span class="tag">PostgreSQL</span><span class="tag alt">LLM Agents</span><span class="tag alt">React</span>
           </div>
           <div class="card-links">
             <a href="https://github.com/panditk455/Voice-AI-acquisitions-agent-Vanessa-" target="_blank" rel="noopener">GitHub</a>
@@ -385,10 +406,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
       <article class="card reveal">
         <div class="card-cover" style="background-image:url(images/cover-stats.jpg)" role="img" aria-label="Analytics dashboard with charts on a laptop"></div>
         <div class="card-body">
-          <h3>Bootstrap Methods for Forensic Error Rates</h3>
-          <p>Senior statistics comps comparing four bootstrap methods for constructing confidence intervals on error rates and inconclusive rates. A simulation study of coverage and width that informs how uncertainty in forensic evidence is reported.</p>
+          <h3>Bootstrap CI Methods for Clustered Observational Data</h3>
+          <p>Senior statistics comps: a Monte Carlo simulation study comparing four statistical methods across 48 scenarios, demonstrating that a commonly trusted method silently undercovers the true answer by 25 to 35 percentage points. Ran 200 x 300 resamples per scenario in parallel with SLURM on HPC, validating the simulation design against real data first.</p>
           <div class="tags">
-            <span class="tag">R</span><span class="tag">Bootstrap</span><span class="tag alt">Simulation Study</span><span class="tag alt">Statistical Inference</span>
+            <span class="tag">R</span><span class="tag">Monte Carlo</span><span class="tag">SLURM / HPC</span><span class="tag alt">Statistical Inference</span>
           </div>
           <div class="card-links">
             <a href="https://github.com/panditk455/StatsCOMPSGroup1" target="_blank" rel="noopener">GitHub</a>
@@ -481,12 +502,6 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div class="lang">Kotlin &middot; Android</div>
         <div class="mini-links"><a href="https://github.com/panditk455/Minesweeper-Game" target="_blank" rel="noopener">GitHub</a></div>
       </div>
-      <div class="mini reveal">
-        <h3>finloop</h3>
-        <p>Personal finance tooling in Python, an ongoing build exploring automated money workflows.</p>
-        <div class="lang">Python</div>
-        <div class="mini-links"><a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a></div>
-      </div>
     </div>
   </div>
 </section>
@@ -503,25 +518,26 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
       <div class="skill-col reveal">
         <h3>Languages</h3>
         <div class="chips">
-          <span class="chip">Python</span><span class="chip">R</span><span class="chip">JavaScript</span>
-          <span class="chip">Kotlin</span><span class="chip">C#</span><span class="chip">SQL</span>
-          <span class="chip">HTML/CSS</span>
+          <span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span>
+          <span class="chip">JavaScript</span><span class="chip">Kotlin</span><span class="chip">C#</span>
         </div>
       </div>
       <div class="skill-col reveal">
-        <h3>Data &amp; Machine Learning</h3>
+        <h3>AI &amp; Machine Learning</h3>
         <div class="chips">
-          <span class="chip">Scikit Learn</span><span class="chip">XGBoost</span><span class="chip">pandas / NumPy</span>
-          <span class="chip">Statistical Modeling</span><span class="chip">Bootstrap Methods</span>
-          <span class="chip">R Shiny</span><span class="chip">Stream Processing</span><span class="chip">PostgreSQL</span>
+          <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit Learn</span>
+          <span class="chip">XGBoost</span><span class="chip">RAG Pipelines</span><span class="chip">FAISS</span>
+          <span class="chip">LLM Applications</span><span class="chip">Agentic Workflows</span>
+          <span class="chip">Prompt Engineering</span><span class="chip">Evaluation Frameworks</span>
         </div>
       </div>
       <div class="skill-col reveal">
-        <h3>Systems &amp; Product</h3>
+        <h3>Infrastructure &amp; Practices</h3>
         <div class="chips">
-          <span class="chip">React / Next.js</span><span class="chip">Flask</span><span class="chip">Unity / VR</span>
-          <span class="chip">Android Studio</span><span class="chip">Cryptography</span><span class="chip">LLM Agents</span>
-          <span class="chip">Twilio / Vapi</span><span class="chip">Git &amp; Vercel</span><span class="chip">Figma</span>
+          <span class="chip">PostgreSQL</span><span class="chip">Kafka</span><span class="chip">TimescaleDB</span>
+          <span class="chip">REST APIs</span><span class="chip">Docker</span><span class="chip">Azure</span>
+          <span class="chip">AWS</span><span class="chip">GitHub Actions CI/CD</span>
+          <span class="chip">Monitoring &amp; Observability</span><span class="chip">Technical Documentation</span>
         </div>
       </div>
     </div>
@@ -537,11 +553,27 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     </div>
     <div class="xp-list">
       <div class="xp reveal">
-        <time>2026 to Present</time>
+        <time>Nov 2025 to Present</time>
         <div>
-          <h3>Software Engineer</h3>
-          <span class="org">AgenScience AI</span>
-          <p>Building AI powered products, from data pipelines to agentic workflows, at an early stage startup.</p>
+          <h3>Retail Data Intern</h3>
+          <span class="org">AgenScience AI, Remote</span>
+          <p>Designing agentic pricing workflows using the Claude API with structured function calling, and building Python backend services and REST API integrations on Azure that connect Shopify to a centralized platform with schema validation at each pipeline stage.</p>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>Aug to Oct 2025</time>
+        <div>
+          <h3>Software Engineer Intern</h3>
+          <span class="org">United Nations DESA, Remote</span>
+          <p>Built Python ETL pipelines with GitHub Actions CI/CD, replacing a 3 day manual process with a fully automated pipeline ingesting 180+ country level datasets into PostgreSQL, while keeping non technical policy stakeholders aligned on data quality risks.</p>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>Jun 2023 to Jun 2026</time>
+        <div>
+          <h3>Student Software Developer</h3>
+          <span class="org">Academic Technology, Carleton College</span>
+          <p>Deployed a Llama 3 RAG pipeline using FAISS vector indexing and a Flask REST API serving 2,000+ users, and built TensorFlow ML pipelines for high throughput behavioral video analysis on GPU hardware.</p>
         </div>
       </div>
       <div class="xp reveal">
@@ -549,15 +581,7 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div>
           <h3>B.A. Computer Science &amp; Statistics</h3>
           <span class="org">Carleton College</span>
-          <p>Double major. Senior comps in satellite image compression (CS) and bootstrap methods for forensic error rates (Statistics). Research contributor on the Virtual Viking Longship spatial computing project.</p>
-        </div>
-      </div>
-      <div class="xp reveal">
-        <time>Internship</time>
-        <div>
-          <h3>Product &amp; Game Development Intern</h3>
-          <span class="org">SayKid</span>
-          <p>Combined product strategy, backend automation, and user research to improve engagement by over 25% on a screen free edtech toy platform.</p>
+          <p>GPA 3.70. Starr International Scholar. Graduated with Distinction in Integrative Exercise and Distinction in Major in Computer Science. Senior comps in satellite image compression (CS) and bootstrap confidence interval methods (Statistics).</p>
         </div>
       </div>
     </div>
@@ -608,9 +632,10 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     <h2>Let's build something together.</h2>
     <p class="foot-sub">I'm always happy to talk about engineering, data, product, or the perfect strawberry matcha recipe.</p>
     <div class="foot-links">
-      <a class="btn btn-berry" href="https://www.linkedin.com/in/kritikapandit/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn btn-berry" href="mailto:panditk@carleton.edu">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/kritikapandit/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-ghost" href="https://github.com/panditk455" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn btn-ghost" href="images/Kritika'sResume.pdf" target="_blank">Resume</a>
+      <a class="btn btn-ghost" href="images/KritikaPanditResume.pdf" target="_blank">Resume</a>
     </div>
     <p class="foot-note">Made with love by Kritika Pandit. Drink some strawberry matcha and stay hydrated!</p>
   </div>
