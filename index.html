@@ -138,12 +138,6 @@ section{padding:88px 0}
 .tag.alt{background:var(--berry-tint);color:var(--berry)}
 .card-links{display:flex;gap:18px;border-top:1px solid var(--line);padding-top:14px}
 .card-links a{font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
-.card-wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.1fr}
-.card-wide .card-cover{height:100%;min-height:280px}
-@media (max-width:960px){
-  .card-wide{display:flex;flex-direction:column}
-  .card-wide .card-cover{height:200px;min-height:0}
-}
 
 /* ---------- More projects ---------- */
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -312,8 +306,8 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     </div>
 
     <div class="feat-grid">
-      <!-- MarketPulse flagship -->
-      <article class="card card-wide reveal">
+      <!-- MarketPulse -->
+      <article class="card reveal">
         <div class="card-cover" style="background-image:url(images/cover-market.jpg)" role="img" aria-label="Candlestick chart on a trading screen"></div>
         <div class="card-body">
           <h3>MarketPulse: Real Time Market Data Platform</h3>
@@ -324,6 +318,21 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
           <div class="card-links">
             <a href="https://github.com/panditk455/MarketPulse" target="_blank" rel="noopener">GitHub</a>
             <a href="https://panditk455.github.io/MarketPulse/" target="_blank" rel="noopener">Live docs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Secure File Transfer -->
+      <article class="card reveal">
+        <div class="card-cover" style="background-image:url(images/crypto.png)" role="img" aria-label="Code on a dark screen"></div>
+        <div class="card-body">
+          <h3>Secure File Transfer System</h3>
+          <p>Client and server file transfer hardened against tampering, injection, deletion, and replay attacks. Uses AES GCM for confidentiality and integrity, a hybrid RSA and AES scheme to establish keys over insecure networks, plus sequence numbering, timestamping, and SHA 256 verification.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Cryptography</span><span class="tag alt">AES GCM</span><span class="tag alt">Network Security</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/panditk455/Secure-File-Transfer" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
@@ -340,21 +349,6 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
           <div class="card-links">
             <a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a>
             <a href="https://panditk455.github.io/finloop/" target="_blank" rel="noopener">Project site</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Secure File Transfer -->
-      <article class="card reveal">
-        <div class="card-cover" style="background-image:url(images/crypto.png)" role="img" aria-label="Code on a dark screen"></div>
-        <div class="card-body">
-          <h3>Secure File Transfer System</h3>
-          <p>Client and server file transfer hardened against tampering, injection, deletion, and replay attacks. Uses AES GCM for confidentiality and integrity, a hybrid RSA and AES scheme to establish keys over insecure networks, plus sequence numbering, timestamping, and SHA 256 verification.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Cryptography</span><span class="tag alt">AES GCM</span><span class="tag alt">Network Security</span>
-          </div>
-          <div class="card-links">
-            <a href="https://github.com/panditk455/Secure-File-Transfer" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
