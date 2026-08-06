@@ -342,9 +342,9 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
         <div class="card-cover" style="background-image:url(images/cover-finloop.jpg)" role="img" aria-label="Financial newspaper with a stock chart"></div>
         <div class="card-body">
           <h3>FinLoop: Self Improving Financial Analysis Agent</h3>
-          <p>A financial document analysis agent that improves itself: three collaborating agents built on the Claude API analyze, evaluate against a rubric designed before the loop was built, and optimize their own prompts. Every prompt version, score, and cost is logged for full observability, at about $0.23 per run.</p>
+          <p>A three agent Claude API loop orchestrated as a LangGraph state machine, where a judge agent scores outputs and routes to re-optimization or final evaluation based on results. Generalization was validated with held out questions (plus 13.0) and a held out document from an unrelated industry (plus 12.1), proving the improvement was not domain specific or a Goodhart's law artifact.</p>
           <div class="tags">
-            <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag alt">LLM Agents</span><span class="tag alt">Evaluation Frameworks</span>
+            <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag alt">LangGraph</span><span class="tag alt">LLM Agents</span><span class="tag alt">Evaluation Frameworks</span>
           </div>
           <div class="card-links">
             <a href="https://github.com/panditk455/finloop" target="_blank" rel="noopener">GitHub</a>
@@ -551,13 +551,25 @@ footer .foot-sub{max-width:520px;margin:0 auto 30px;opacity:.75;font-size:.97rem
     </div>
     <div class="xp-list">
       <div class="xp reveal">
-        <time>Nov 2025 to Present</time>
+        <time>Apr 2026 to Present</time>
         <div>
-          <h3>Retail Data Intern</h3>
-          <span class="org">AgenScience AI, Remote</span>
+          <h3>Software Engineer</h3>
+          <span class="org">AgenScience AI, Remote (Seed Stage AI Startup)</span>
           <ul>
-            <li>Design agentic pricing workflows on the Claude API with structured function calling, translating what business stakeholders actually need into scalable AI powered solutions that run in production.</li>
-            <li>Build the backbone that keeps it all reliable: Python backend services and REST API integrations on Azure that connect Shopify to a centralized platform, with schema validation at every stage of the pipeline.</li>
+            <li>Designed a unified retail ontology, covering Merchant, Product, Order, and Experiment, in Microsoft Fabric, giving pricing logic, A/B testing, and Shopify sync one consistent, governed data model instead of fragmented, drifting schemas.</li>
+            <li>Built the production Shopify backend for RevMax using Flask, SQLAlchemy, and the Admin GraphQL API, enabling merchants to run statistically valid A/B price experiments and push winning prices live in one click.</li>
+            <li>Architected a pluggable demand model framework and benchmarked four pricing specifications on real transaction data, cutting elasticity estimation failures from 10% to 0% through held out testing.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp reveal">
+        <time>Nov 2025 to Apr 2026</time>
+        <div>
+          <h3>Data Engineering Intern</h3>
+          <span class="org">Oracle, Belmont, MA</span>
+          <ul>
+            <li>Architected the transition of a monolithic big data pipeline into smaller, modular products within Oracle Retail Lifecycle Pricing Optimization, boosting efficiency and reducing costs.</li>
+            <li>Secured the codebase by resolving hundreds of vulnerabilities and deploying critical patches, and designed OCI dashboards monitoring memory, latency, and KPIs using Terraform based infrastructure as code across AWS and OCI.</li>
           </ul>
         </div>
       </div>
